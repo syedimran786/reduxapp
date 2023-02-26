@@ -2,56 +2,71 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
+import IceCreamView from './features/ice/IceCreamView';
+import CakeSliceView from './features/cake/CakeSliceView';
+import UserSliceView from './features/users/UserSliceView';
+import CartView from './features/cart/CartView';
+import CartItems from './features/cart/CartItems.jsx';
+import Navbar from './features/cart/Navbar';
+import CocktailNavbar from './features/cocktails/CocktailNavbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './features/cocktails/Home';
+import CocktailDetails from './features/cocktails/CocktailDetails';
+import Cocktails from './features/cocktails/Cocktails';
+import AllCocktails from './features/cocktails/AllCocktails';
 
+import CrudNavbar from './features/crud/Navbar';
+
+import AddProducts from "./features/crud/AddProducts"
+import UpdateProducts from "./features/crud/UpdateProducts"
+import GetProducts from "./features/crud/GetProducts"
+import GetProductsById from "./features/crud/GetProductsById"
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Navbar/>
+//       <CartItems/>
+//     </div>
+//   );
+// }
+
+//! cocktail
+// function App() {
+//   return (
+   
+//       <BrowserRouter>
+//       <CocktailNavbar/>
+//         <Routes>
+//           <Route path='/' element={<Home/>}/>
+//           <Route path='cocktails' element={<AllCocktails/>}/>
+//           <Route path='cocktailDetails/:id' element={<CocktailDetails/>}/>
+//         </Routes>
+//       </BrowserRouter>
+      
+      
+//   );
+// }
+
+// export default App;
+
+//! crud
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+   
+      <BrowserRouter>
+      <CrudNavbar/>
+        <Routes>
+          <Route path='/' element={<Home/>}/>
+          <Route path='addProducts' element={<AddProducts/>}/>
+          <Route path='updateProducts/:id' element={<UpdateProducts/>}/>
+          <Route path='getProducts' element={<GetProducts/>}/>
+          <Route path='getProductsById/:id' element={<GetProductsById/>}/>
+          
+        </Routes>
+      </BrowserRouter>
+      
+      
   );
 }
 

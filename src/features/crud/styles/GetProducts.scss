@@ -1,0 +1,51 @@
+@mixin btn-style($a)
+{
+    background-color:$a;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 500;
+    border-radius: 6px;
+    border: none;
+    margin: 10px;
+
+    
+}
+
+table {
+    border: 3px solid black;
+    border-collapse: collapse;
+    margin: 50px auto;
+    width: 70%;
+    text-align: center;
+
+    tr,
+    td,
+    thead,
+    tbody,
+    th {
+        border: 3px solid black;
+        border-collapse: collapse;
+    }
+
+    td,th 
+    {
+        padding: 20px;
+    }
+   button:first-child
+   {
+    @include btn-style(red);
+    &:active
+    {
+        background-color:rgba(125, 10, 10, 0.56);
+    }
+      
+   }
+   button:last-child
+   {
+    @include btn-style(green);
+    &:active
+    {
+        background-color:rgba(6, 72, 25, 0.56);
+    }
+   }
+}
